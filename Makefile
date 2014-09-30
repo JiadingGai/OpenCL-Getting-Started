@@ -7,8 +7,9 @@ else
 	OPTIONS += -l OpenCL
 endif
 
-main: main.c
-	gcc -Wall -g main.c -o main $(OPTIONS)
+all:main main_mm
+%: %.c
+	gcc -Wall -g $^ -o $@ $(OPTIONS)
 
 clean:
-	rm -rf main
+	rm -rf main main_mm
